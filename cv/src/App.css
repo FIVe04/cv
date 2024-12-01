@@ -1,42 +1,227 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1E1E1E;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main-page {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  /* height: 100vh; */
+  align-items: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.technology-section {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  overflow:auto;
+  gap: 50px;
+  /* justify-content: space-between; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.tech-section {
+  width: 50vw;
 }
 
-.card {
-  padding: 2em;
+.title-section {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.read-the-docs {
-  color: #888;
+.title-section-job-status-outer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 20px;
+  border: 1.5px solid white;
+  border-radius: 50px;
 }
+
+.title-section-job-status-title {
+  font-family: "Inter", sans-serif;
+  color:white;
+  font-size: 10pt;
+  font-weight: 600;
+}
+
+.title-section-job-status-indicator {
+  width: 5px;
+  height: 5px;
+  background-color: greenyellow;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+
+.title-section-name {
+  margin-top: 10px;
+  font-family: "Inter", sans-serif;
+  color:white;
+  font-size: 30pt;
+  font-weight: 600;
+  line-height: 30pt;
+}
+
+.title-section-role {
+  margin-top: 10px;
+  font-family: "Lexend", sans-serif;
+  color:white;
+  font-size: 25pt;
+  line-height: 25pt;
+  font-weight: 600;
+}
+
+.title-section-btns-section {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.title-section-download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;  
+  margin-right: 20px;
+
+  color:#1E1E1E;
+  font-family: "Inter", sans-serif;
+  font-size: 10pt;
+  line-height: 10pt;
+  font-weight: 600;
+}
+
+.title-section-contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;  
+
+  color:#1E1E1E;
+  font-family: "Inter", sans-serif;
+  font-size: 10pt;
+  line-height: 10pt;
+  font-weight: 600;
+}
+
+.img-btn-download {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.img-btn-mail {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-section-title {
+  margin-top: 50px;
+  color:white;
+  font-family: "Inter", sans-serif;
+  font-size: 20pt;
+  line-height: 20pt;
+  font-weight: 600;
+}
+
+.globe-outer {
+  position: relative;
+  width: 30vw;
+  height: 30vw;
+  margin-top: -20px
+}
+
+.about-section-inter {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-section-location {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-section-location-text {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 12pt;
+  line-height: 12pt;
+  font-weight: 500;
+}
+
+.about-section-location-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+
+.about-section-contacts {
+  width: 30vw;
+}
+/* 
+<div className="about-section-contacts-item">
+              <img className='about-section-contacts-item-icon' src={tgIcon}/>
+              Teelgram
+            </div> */
+
+.about-section-contacts-item {
+  margin-left: 7.5vw;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 14pt;
+  line-height: 14pt;
+  font-weight: 600;
+}
+
+.about-section-contacts-item:first-child {
+  margin-top: 20px;
+}
+
+.about-section-contacts-item-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.technolohies-title {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 25pt;
+  line-height: 25pt;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.technologies-list {
+  margin-bottom: 100px;
+}
+
+
+

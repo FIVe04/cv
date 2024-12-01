@@ -1,0 +1,18 @@
+.technology-card-outer {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 10px;
+}
+
+.technology-card-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.technology-card-name {
+    font-family: "Lexend", sans-serif;
+    color:white;
+    font-size: 12pt;
+    font-weight: 500;
+    margin-left: 5px;
+}

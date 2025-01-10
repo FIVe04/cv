@@ -32,7 +32,6 @@ function App() {
   const [clientHeight, setClientHeight] = useState<number>(0);
 
   const [scrollPercent, setScrollPercent] = useState<number>(0);
-  const [aboutTop, setAboutTop] = useState<number>(0);
 
   const handleScroll = () => {
     setScrollY(window.scrollY);
@@ -78,7 +77,7 @@ function App() {
       }}></div>
       }
       
-      <section className="title-section" onClick={()=>{console.log(scrollY, documentHeight, clientHeight, scrollPercent, aboutTop)}}>
+      <section className="title-section" onClick={()=>{console.log(scrollY, documentHeight, clientHeight, scrollPercent)}}>
         <div className="title-section-job-status-outer">
           <div className="title-section-job-status-indicator"></div>
           <h2 className="title-section-job-status-title">Свободен</h2>

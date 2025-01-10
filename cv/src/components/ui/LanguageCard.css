@@ -1,0 +1,65 @@
+.language-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.language-title-outer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.language-icon {
+    width: 24px;
+}
+
+.language-name {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.language-description {
+    margin-top: 5px;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.language-level {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 5px;
+    align-items: center;
+}
+
+.language-level-text {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 500;
+}
+
+.language-progress-bar-outer {
+    height: 5px;
+    width: 100px;
+    background-color: #8B8B8B;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+

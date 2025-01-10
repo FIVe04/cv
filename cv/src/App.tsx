@@ -15,14 +15,70 @@ import igIcon from './assets/mdi_instagram.svg'
 
 import uniIcon from './assets/uniIcon.svg'
 import schoolIcon from './assets/schoolIcon.svg'
+import ProjectCard from './components/ui/ProjectCard'
 
-import ttsLogo from './assets/tts_logo.svg'
+import ttsProjectData from './lib/shared/projects/ttsProject'
+import { useEffect, useState } from 'react'
+import mpeiAppProjectData from './lib/shared/projects/mpeiAppProject'
+import LanguageCard from './components/ui/LanguageCard'
+import Russian from './lib/shared/languages/russian'
+import English from './lib/shared/languages/english'
+
 
 function App() {
 
+  const [scrollY, setScrollY] = useState<number>(0);
+  const [documentHeight, setDocumentHeight] = useState<number>(0);
+  const [clientHeight, setClientHeight] = useState<number>(0);
+
+  const [scrollPercent, setScrollPercent] = useState<number>(0);
+  const [aboutTop, setAboutTop] = useState<number>(0);
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+    setDocumentHeight(document.documentElement.scrollHeight);
+    setClientHeight(window.innerHeight);
+
+    setScrollPercent(Math.round(window.scrollY/(document.documentElement.scrollHeight - window.innerHeight) * 100));
+
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+
+    // return () => {
+    //   window.removeEventListener('scroll', handleScroll);
+    //   window.removeEventListener('resize', handleScroll);
+    // };
+  }, []);
+
+
+
   return (
     <div className='main-page'>
-      <section className="title-section">
+      {window.innerWidth < 600 ? 
+        <></>
+        :
+        <div className="navigation-bar-inactive"
+        style={scrollY === 0 ? {
+          background: 'linear-gradient(to bottom, black 0%, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.2) 90%, black 100%)',
+          width: '3px',
+          bottom: '50px',
+          position: 'fixed',
+          right: '50px',
+          top: '50px',
+        }: {
+          background: `linear-gradient(to bottom, black 0%, rgba(255, 255, 255, 1) ${scrollPercent < 10 ? scrollPercent : 10}%,rgba(255, 255, 255, 1) ${scrollPercent}%,rgba(255, 255, 255, 0.1) ${scrollPercent}%, rgba(255, 255, 255, 0.2) 90%, black 100%)`,
+          width: '3px',
+          bottom: '50px',
+          position: 'fixed',
+          right: '50px',
+          top: '50px',
+      }}></div>
+      }
+      
+      <section className="title-section" onClick={()=>{console.log(scrollY, documentHeight, clientHeight, scrollPercent, aboutTop)}}>
         <div className="title-section-job-status-outer">
           <div className="title-section-job-status-indicator"></div>
           <h2 className="title-section-job-status-title">Свободен</h2>
@@ -30,14 +86,14 @@ function App() {
         <h1 className="title-section-name">Фролов Иван</h1>
         <h1 className="title-section-role">Full-Stack Developer</h1>
         <div className="title-section-btns-section">
-          <div className="title-section-download-btn">
+          <a className="title-section-download-btn" href="/резюме_Фролов_Иван_Андреевич.pdf">
             <img src={downloadIcon} className='img-btn-download'/>
             Скачать резюме
-            </div>
-          <div className="title-section-contact-btn">
-          <img src={mailIcon} className='img-btn-mail'/>
-            Связаться со мной
-            </div>
+          </a>
+          <a className="title-section-contact-btn" href='mailto:frolovia04@gmail.com'>
+            <img src={mailIcon} className='img-btn-mail'/>
+              Связаться со мной
+          </a>
         </div>
       </section>
 
@@ -56,22 +112,22 @@ function App() {
           </div>
           </div>
           <div className="about-section-contacts">
-            <div className="about-section-contacts-item">
+            <a className="about-section-contacts-item" href="https://t.me/vf0705" target="_blank">
               <img className='about-section-contacts-item-icon' src={tgIcon}/>
               Telegram
-            </div>
-            <div className="about-section-contacts-item">
+            </a>
+            <a className="about-section-contacts-item" href="mailto:frolovia04@gmail.com" target="_blank">
               <img className='about-section-contacts-item-icon' src={gmailIcon}/>
               Mail
-            </div>
-            <div className="about-section-contacts-item">
+            </a>
+            <a className="about-section-contacts-item" href="https://github.com/FIVe04" target="_blank">
               <img className='about-section-contacts-item-icon' src={githubIcon}/>
               Github
-            </div>
-            <div className="about-section-contacts-item">
+            </a>
+            <a className="about-section-contacts-item" href="https://www.instagram.com/vanyafrolov0705" target="_blank">
               <img className='about-section-contacts-item-icon' src={igIcon}/>
               Instagram
-            </div>
+            </a>
           </div>
           
 
@@ -118,17 +174,18 @@ function App() {
         </div>
       </section>
 
-      <h1 className="education-title">Проекты</h1>
+      <h1 className="lang-title">Языки</h1>
+
+      <section className="language-section">
+        <LanguageCard {...Russian}/>
+        <LanguageCard {...English}/>
+      </section>
+
+      <h1 className="projects-title">Проекты</h1>
 
       <section className='projects-section'>
-          <div className="tts-project">
-            <div className="tts-title-outer">
-              <h2 className="tts-title">Сервис для покупки билетов на мероприятия</h2>
-              <img src={ttsLogo}/>
-            </div>
-            <a className="tts-link" href="https://tickettoshow.ru/">tickettoshow.ru</a>
-            
-          </div>
+          <ProjectCard {...ttsProjectData}/>
+          <ProjectCard {...mpeiAppProjectData}/>
       </section>
 
       

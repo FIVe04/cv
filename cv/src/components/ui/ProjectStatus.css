@@ -1,0 +1,65 @@
+.project-status-outer {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: none;
+    padding: 10px 30px;
+    /* border: 3px solid white; */
+    border-radius: 10px;
+    background-color: black;
+}
+
+.status-text {
+    text-transform: uppercase;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 12pt;
+    line-height: 12pt;
+    font-weight: 500;
+    text-align: center;
+}
+
+.project-status-outer::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 1px solid white;
+    border-radius: 15px;
+    background: linear-gradient(90deg, transparent 25%, var(--gradient-color, rgba(255, 255, 255, 1)), transparent 75%);
+    background-size: 200% 200%;
+    animation: moveGradient 4s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%; /* Начальное положение */
+    }
+    50% {
+        background-position: 100% 50%; /* Движение вправо */
+    }
+    100% {
+        background-position: 0% 50%; /* Возвращение в начало */
+    }
+}
+
+@media (max-width: 500px) {
+    .project-status-outer {
+        padding: 5px 20px;
+        border-radius: 5px;
+
+    }
+
+
+    .status-text {
+        font-size: 10pt;
+        line-height: 10pt;
+        font-weight: 500;
+    }
+}

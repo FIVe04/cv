@@ -1,4 +1,4 @@
-import "../technologyCard.css"
+import "./technologyCard.css"
 
 const TechnologyCard = (props:any) => {
   return (

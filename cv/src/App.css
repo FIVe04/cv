@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #1E1E1E;
+  background-color: black;
 }
 
 .main-page {
@@ -54,6 +54,19 @@ body {
   background-color: greenyellow;
   border-radius: 10px;
   margin-right: 8px;
+  animation: fadeInOut 3s infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    background-color: transparent; /* Начало: прозрачный */
+  }
+  50% {
+    background-color: greenyellow; /* В середине: greenyellow */
+  }
+  100% {
+    background-color: transparent; /* Конец: прозрачный */
+  }
 }
 
 .title-section-name {
@@ -134,8 +147,8 @@ body {
   margin-top: 50px;
   color:white;
   font-family: "Inter", sans-serif;
-  font-size: 20pt;
-  line-height: 20pt;
+  font-size: 25pt;
+  line-height: 25pt;
   font-weight: 600;
 }
 
@@ -179,11 +192,6 @@ body {
 .about-section-contacts {
   width: 30vw;
 }
-/* 
-<div className="about-section-contacts-item">
-              <img className='about-section-contacts-item-icon' src={tgIcon}/>
-              Teelgram
-            </div> */
 
 .about-section-contacts-item {
   margin-left: 7.5vw;
@@ -220,8 +228,236 @@ body {
 }
 
 .technologies-list {
+  margin-bottom: 50px;
+}
+
+.education-title {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 25pt;
+  line-height: 25pt;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.education-section {
+  width: 70vw;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
   margin-bottom: 100px;
+}
+
+.education-school-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.education-uni-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.school-title {
+  text-align: center;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 18pt;
+  line-height: 18pt;
+  font-weight: 500;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-self: center;
+  filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.25));
+}
+
+.uni-title {
+  text-align: center;
+  align-self: center;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 18pt;
+  line-height: 18pt;
+  font-weight: 500;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.25));
+}
+
+.uni-name {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 15pt;
+  line-height: 20pt;
+  font-weight: 500;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.school-name {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 15pt;
+  line-height: 20pt;
+  font-weight: 500;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.school-class {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 15pt;
+  line-height: 15pt;
+  font-weight: 500;
+  text-align: center;
+}
+
+.school-dates {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 12pt;
+  line-height: 12pt;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bar-split {
+  margin: 5px 0px;
+  width: 20px;
+  height: 3px;
+  background-color: none;
+  border-radius: 10px;
+}
+
+.school-title > img {
+  width: 20px;
+  height: 20px;
+}
+.uni-title > img {
+  width: 20px;
+  height: 20px;
+}
+
+
+.projects-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 100px;
+  width: 70vw;
+}
+
+.tts-project {
+  margin-top: 30px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 5px white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tts-title-outer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.tts-title {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 15pt;
+  line-height: 15pt;
+  font-weight: 400;
+  text-align: center;
+}
+
+
+.tts-title-outer > img {
+  height: 40px;
+}
+
+.tts-link {
+  margin-top: 15px;
+  text-decoration: none;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 12pt;
+  line-height: 12pt;
+  font-weight: 400;
+  text-align: center;
+  
+  border: 2px solid white;
+  border-radius: 100vw;
+  padding: 10px 30px;
 }
 
 
 
+
+@media (max-width: 850px) {
+  .globe-outer {
+    top:20px;
+  }
+
+  .education-section {
+    width: 70vw;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 100px;
+  }
+
+
+  .school-title > img {
+    display: none;
+  }
+  .uni-title > img {
+    display: none;
+  }
+
+  .school-title {
+    font-size: 15pt;
+    line-height: 15pt;
+  }
+
+  .uni-title {
+    font-size: 15pt;
+    line-height: 15pt;
+  }
+
+  .school-name {
+    font-size: 12pt;
+    line-height: 12pt;
+  }
+  .uni-name {
+    font-size: 12pt;
+    line-height: 12pt;
+  }
+
+  .school-class {
+    font-size: 12pt;
+    line-height: 12pt;
+  }
+
+  .school-dates {
+    font-size: 12pt;
+    line-height: 12pt;
+  }
+
+}

@@ -1,0 +1,100 @@
+.experience-outer {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    justify-items: center;
+    /* background-color: aqua; */
+}
+
+.work-time-section {
+    margin-top: 8px;
+    /* background-color: blue; */
+}
+
+.experience-info-section {
+    /* background-color: red; */
+}
+
+.experience-date {
+    color: #8B8B8B;
+    font-family: "Inter", sans-serif;
+    font-size: 12pt;
+    font-weight: 500;
+}
+
+.experience-company-outer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.experience-logo {
+    height: 40px;
+}
+
+.experience-title {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 14pt;
+    font-weight: 500;
+}
+
+.experience-position {
+    margin-top: 10px;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 12pt;
+    font-weight: 500;
+    /* margin-left: 5px; */
+}
+
+.experience-status {
+    color: #8B8B8B;
+    font-family: "Inter", sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+}
+
+.experience-tasks {
+    margin-top: 15px;
+    padding-left: 20px;
+    list-style-type: disc; 
+    color: #d3d3d3; 
+    font-family: "Inter", sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    line-height: 1.2; 
+}
+  
+.experience-task-item {
+    margin-bottom: 5px;
+}
+
+.experience-technologies-outer {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap; /* Перенос на следующую строку при нехватке места */
+    gap: 10px; /* Отступы между элементами */
+  }
+  
+  .experience-technology {
+    background-color: #ffffff;
+    border-radius: 12px; 
+    padding: 6px 12px; 
+    display: inline-flex; 
+    align-items: center;
+  }
+  
+  .experience-technology-name {
+    color: #000000; /* Черный текст */
+    font-family: "Inter", sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+
+
+

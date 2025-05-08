@@ -23,6 +23,8 @@ import mpeiAppProjectData from './lib/shared/projects/mpeiAppProject'
 import LanguageCard from './components/ui/LanguageCard'
 import Russian from './lib/shared/languages/russian'
 import English from './lib/shared/languages/english'
+import WorkExperienceCard from './components/ui/WorkExperienceCard'
+import rpaMarsWorkExperience from './lib/shared/experience/rpa_mars'
 
 
 function App() {
@@ -80,10 +82,10 @@ function App() {
       <section className="title-section" onClick={()=>{console.log(scrollY, documentHeight, clientHeight, scrollPercent)}}>
         <div className="title-section-job-status-outer">
           <div className="title-section-job-status-indicator"></div>
-          <h2 className="title-section-job-status-title">Свободен</h2>
+          <h2 className="title-section-job-status-title">Part-time, открыт к предложениям</h2>
         </div>
         <h1 className="title-section-name">Фролов Иван</h1>
-        <h1 className="title-section-role">Full-Stack Developer</h1>
+        <h1 className="title-section-role">Full-Stack/IOS Developer</h1>
         <div className="title-section-btns-section">
           <a className="title-section-download-btn" href="/резюме_Фролов_Иван_Андреевич.pdf">
             <img src={downloadIcon} className='img-btn-download'/>
@@ -95,6 +97,7 @@ function App() {
           </a>
         </div>
       </section>
+      
 
       <section className="about-section">
         <h1 className="about-section-title">Обо мне</h1>
@@ -179,6 +182,13 @@ function App() {
         <LanguageCard {...Russian}/>
         <LanguageCard {...English}/>
       </section>
+
+      <h1 className="projects-title">Опыт работы</h1>
+
+      <section className='experience-section'>
+          <WorkExperienceCard experience={rpaMarsWorkExperience} />
+      </section>
+
 
       <h1 className="projects-title">Проекты</h1>
 

@@ -9,8 +9,8 @@ const ttsProjectData: ProjectType = {
     linkHref: "https://tickettoshow.ru/",
     linkText: "tickettoshow.ru",
     screenshotSrc: ttsSiteScreen,
-    position: "frontend",
-    subPosition: "backend consultant, CI/CD, system administrator",
+    position: "full stack",
+    subPosition: "CI/CD, system administrator",
     projectStatus: "in progress",
   };
 

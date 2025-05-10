@@ -18,12 +18,12 @@ jobs:
         node-version: 23
 
     - name: Install dependencies
-      run:
+      run: |
         cd cv
         npm install
 
     - name: Build project
-      run: 
+      run: |
         cd cv
         npm run build
 

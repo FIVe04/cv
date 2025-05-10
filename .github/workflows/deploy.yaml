@@ -1,0 +1,47 @@
+name: Deploy to Server
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 23
+
+    - name: Install dependencies
+      run:
+        cd cv
+        npm install
+
+    - name: Build project
+      run: 
+        cd cv
+        npm run build
+
+    - name: Copy files to server
+      env:
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+        SERVER_USER: ${{ secrets.SERVER_USER }}
+        SERVER_PATH: ${{ secrets.SERVER_PATH }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: |
+        cd app
+        echo $SSH_PRIVATE_KEY > private_key
+        chmod 600 private_key
+        ls -l private_key || exit 1  
+        rsync -avz -e "ssh -i private_key -o StrictHostKeyChecking=no" dist/ $SERVER_USER@$SERVER_IP:$SERVER_PATH
+        rm private_key
+
+    - name: Restart Nginx (optional)
+      if: success()
+      run: |
+        ssh -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "sudo systemctl restart nginx"

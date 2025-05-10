@@ -1,13 +1,12 @@
-import { LanguageType } from "@/types/LanguageType";
-import ruFlag from '@/assets/russianFlag.svg'
+import { LanguageType } from '@/types/LanguageType';
+import ruFlag from '@/assets/russianFlag.svg';
 
 const Russian: LanguageType = {
-    language: "Русский",
-    icon: ruFlag,
-    level: "Native",
-    percent: 100,
-    description: "Родной язык"
-}
+  languageKey: 'russian',
+  icon: ruFlag,
+  level: 'Native',
+  percent: 100,
+  descriptionKey: 'native_language',
+};
 
 export default Russian;
-

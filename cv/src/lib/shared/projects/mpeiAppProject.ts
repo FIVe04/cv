@@ -4,7 +4,7 @@ import ttsSiteScreen from "@/assets/site_tts_screen.svg"
 
 
 const mpeiAppProjectData: ProjectType = {
-    title: "IOS приложение для университета МЭИ с раписанием и оценками",
+    titleKey: "mpei_app_title",
     logoSrc: mpeiAppLogo,
     linkHref: "",
     linkText: "",

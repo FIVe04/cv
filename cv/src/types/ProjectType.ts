@@ -1,6 +1,6 @@
 
 export type ProjectType = {
-    title: string; // Заголовок проекта
+    titleKey: string; // Заголовок проекта
     logoSrc: string; // URL или путь к логотипу
     linkHref: string; // Ссылка на проект
     linkText: string; // Текст ссылки

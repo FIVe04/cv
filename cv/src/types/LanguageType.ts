@@ -1,9 +1,9 @@
 
 export type LanguageType = {
-    language: string,
+    languageKey: string,
     icon: string,
     level: string,
     percent: number,
-    description: string,
+    descriptionKey: string,
 };
   

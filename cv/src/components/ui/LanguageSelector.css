@@ -1,0 +1,43 @@
+.language-toggle {
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    width: 61px;
+    height: 34px;
+    border: 2px solid white;
+    background: transparent;
+    border-radius: 100vw;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: fixed;
+    box-shadow:  0 0 50px rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 1000px) {
+  .language-toggle {
+    position: relative;
+    top: 20px;
+    left: 0;
+  }
+}
+
+
+.flag {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.flag.left {
+  transform: translateX(2px) translateY(-50%);
+}
+
+.flag.right {
+  transform: translateX(29px) translateY(-50%);
+}

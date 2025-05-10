@@ -4,7 +4,7 @@ import ttsSiteScreen from "@/assets/site_tts_screen.svg"
 
 
 const ttsProjectData: ProjectType = {
-    title: "Сервис для покупки билетов на мероприятия",
+    titleKey: "tts_title",
     logoSrc: ttsLogo,
     linkHref: "https://tickettoshow.ru/",
     linkText: "tickettoshow.ru",
@@ -15,4 +15,4 @@ const ttsProjectData: ProjectType = {
   };
 
 export default ttsProjectData;
-  
+

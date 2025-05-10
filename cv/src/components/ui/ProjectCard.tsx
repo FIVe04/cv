@@ -5,9 +5,10 @@ import ProjectStatus from './ProjectStatus';
 
 import mpeiGradedScreen from '../../assets/mpeiGradesScreen.png'
 import mpeiScheduleScreen from '../../assets/mpeiScheduleScreen.png'
+import { useTranslation } from 'react-i18next';
 
 const ProjectCard: React.FC<ProjectType> = ({ 
-  title, 
+  titleKey, 
   logoSrc, 
   linkHref, 
   linkText, 
@@ -17,12 +18,13 @@ const ProjectCard: React.FC<ProjectType> = ({
   projectStatus,
 }) => {
 
+  const { t } = useTranslation();
 
   return (
     <div className="tts-project">
       <ProjectStatus projectStatus={projectStatus}/>
       <div className="tts-title-outer">
-        <h2 className="tts-title">{title}</h2>
+        <h2 className="tts-title">{t(titleKey)}</h2>
         <img src={logoSrc} alt="Project Logo" />
       </div>
       
@@ -37,7 +39,7 @@ const ProjectCard: React.FC<ProjectType> = ({
       }
       
     {
-        title !== "IOS приложение для университета МЭИ с раписанием и оценками" ?
+        titleKey !== "mpei_app_title" ?
         <img className="tts-site-screenshot" src={screenshotSrc} alt="Site Screenshot" />
         :
         <div className="images-grid">
